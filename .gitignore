@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Google credentials and tokens — never commit these
+credentials*.json
+token*.json
+service_account*.json
+client_secret*.json
+*.pem
+*.p12
+
+# OS / editor
+.DS_Store
+*.log

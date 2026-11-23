@@ -1,0 +1,42 @@
+{
+  "name": "mcp-google-workspace",
+  "version": "1.0.0",
+  "description": "MCP server for Google Workspace: Gmail, Calendar, Drive, Sheets, Groups, Admin audit logs, Apps Script, Cloud DNS and Tag Manager.",
+  "type": "module",
+  "main": "index.mjs",
+  "bin": {
+    "mcp-google-workspace": "index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "auth.mjs",
+    "src/",
+    ".env.example",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "auth": "node auth.mjs",
+    "start": "node index.mjs",
+    "check": "node --check index.mjs && node --check auth.mjs && for f in $(find src -name '*.mjs'); do node --check \"$f\" || exit 1; done"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "google-workspace",
+    "gmail",
+    "google-drive",
+    "google-sheets",
+    "google-calendar",
+    "claude",
+    "antigravity"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "googleapis": "^144.0.0"
+  }
+}
